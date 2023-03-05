@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
@@ -29,7 +30,8 @@ import { AddModalFormComponent } from './components/add-modal-form/add-modal-for
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
