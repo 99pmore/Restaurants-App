@@ -1,1 +1,78 @@
-<p>add-modal-form works!</p>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <mat-form-field color="accent">
+        <mat-label>Nombre del restaurante</mat-label>
+        <input type="text" matInput formControlName="name" />
+        <mat-error *ngIf="formGroup.get('name')?.invalid">
+            El nombre del restaurante es obligatorio.
+        </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field color="accent">
+        <mat-label>Ubicación</mat-label>
+        <input type="text" matInput formControlName="location" />
+        <mat-error *ngIf="formGroup.get('location')?.invalid">
+            La ubicación es obligatoria.
+        </mat-error>
+    </mat-form-field>
+  
+    <!-- <mat-form-field color="accent">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="categories" multiple>
+            <mat-option *ngFor="let category of categories" [value]="category.value">
+                {{ category.viewValue }}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.get('categories')?.invalid">
+            Debe seleccionar al una categoría.
+        </mat-error>
+    </mat-form-field> -->
+
+    <mat-form-field color="accent">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="category">
+            <mat-option *ngFor="let category of categories" [value]="category.value">
+                {{ category.viewValue }}
+            </mat-option>
+            <mat-option value="otro">Otro</mat-option>
+        </mat-select>
+    </mat-form-field>
+      
+
+    <mat-form-field color="accent">
+        <mat-label>Valoración</mat-label>
+        <mat-select formControlName="rate">
+            <mat-option *ngFor="let rate of ratings" [value]="rate.value">
+                {{ rate.viewValue }}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.get('rate')?.invalid">
+          La valoración es obligatoria.
+        </mat-error>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill">
+        <mat-label>Valoración</mat-label>
+        <mat-icon class="star" (click)="setValue(1)">star</mat-icon>
+        <mat-icon class="star" (click)="setValue(2)">star</mat-icon>
+        <mat-icon class="star" (click)="setValue(3)">star</mat-icon>
+        <mat-icon class="star" (click)="setValue(4)">star</mat-icon>
+        <mat-icon class="star" (click)="setValue(5)">star</mat-icon>
+        <input type="hidden" formControlName="rate">
+    </mat-form-field> -->
+  
+    <!-- <mat-form-field>
+        <mat-label>Imagen</mat-label>
+        <input
+            type="file"
+            matInput
+            (change)="onFileSelected($event)"
+            accept="image/*"
+        />
+        <mat-error *ngIf="formGroup.get('foto').invalid">
+            La imagen es obligatoria.
+        </mat-error>
+    </mat-form-field> -->
+  
+    <button mat-raised-button color="primary" type="submit">Añadir</button>
+</form>
+  
