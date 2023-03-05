@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,10 +11,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 
 import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
 import { AddModalFormComponent } from './components/add-modal-form/add-modal-form.component';
+import { NewCategoryModalComponent } from './components/new-category-modal/new-category-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { AddModalFormComponent } from './components/add-modal-form/add-modal-for
     HeaderComponent,
     AddButtonComponent,
     AddModalFormComponent,
+    NewCategoryModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,9 @@ import { AddModalFormComponent } from './components/add-modal-form/add-modal-for
     MatInputModule,
     MatToolbarModule,
     MatDialogModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
