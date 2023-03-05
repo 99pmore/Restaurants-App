@@ -7,12 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { HeaderComponent } from './components/header/header.component';
+import { AddButtonComponent } from './components/add-button/add-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +26,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatTabsModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
