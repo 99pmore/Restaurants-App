@@ -20,7 +20,7 @@ import { AddModalFormComponent } from './components/add-modal-form/add-modal-for
     AppComponent,
     HeaderComponent,
     AddButtonComponent,
-    AddModalFormComponent
+    AddModalFormComponent,
   ],
   imports: [
     BrowserModule,
