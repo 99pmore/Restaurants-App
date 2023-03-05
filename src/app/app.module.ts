@@ -12,12 +12,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
+import { AddModalFormComponent } from './components/add-modal-form/add-modal-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AddButtonComponent
+    AddButtonComponent,
+    AddModalFormComponent
   ],
   imports: [
     BrowserModule,
