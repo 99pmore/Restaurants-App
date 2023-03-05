@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+
+header {
+    background-color: map-get($custom-primary-map, 500);
+    box-shadow: 0 0 10px map-get($custom-primary-map, 500);
+
+    padding: 20px 40px;
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            input[type='search'] {
+                border: none;
+                border-radius: 8px;
+
+                height: 40px;
+                width: 250px;
+                padding: 10px;
+
+                &:focus {
+                    outline: 2px solid #b4a7d6;
+                }
+            }
+        }
+    }
+}
