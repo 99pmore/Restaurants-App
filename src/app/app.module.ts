@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,8 @@ import { NewCategoryModalComponent } from './components/new-category-modal/new-c
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatTabsModule,
     MatButtonModule,
     MatIconModule,
@@ -38,7 +40,6 @@ import { NewCategoryModalComponent } from './components/new-category-modal/new-c
     MatToolbarModule,
     MatDialogModule,
     MatSnackBarModule,
-    ReactiveFormsModule,
     MatSelectModule,
   ],
   providers: [],
