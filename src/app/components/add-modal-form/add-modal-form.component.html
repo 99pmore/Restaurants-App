@@ -14,29 +14,19 @@
             La ubicación es obligatoria.
         </mat-error>
     </mat-form-field>
-  
-    <!-- <mat-form-field color="accent">
+
+    <mat-form-field color="accent">
         <mat-label>Categoría</mat-label>
         <mat-select formControlName="categories" multiple>
             <mat-option *ngFor="let category of categories" [value]="category.value">
                 {{ category.viewValue }}
             </mat-option>
+            <mat-option value="otro" (click)="addCategory()">Otro</mat-option>
         </mat-select>
         <mat-error *ngIf="formGroup.get('categories')?.invalid">
-            Debe seleccionar al una categoría.
-        </mat-error>
-    </mat-form-field> -->
-
-    <mat-form-field color="accent">
-        <mat-label>Categoría</mat-label>
-        <mat-select formControlName="category">
-            <mat-option *ngFor="let category of categories" [value]="category.value">
-                {{ category.viewValue }}
-            </mat-option>
-            <mat-option value="otro">Otro</mat-option>
-        </mat-select>
+            La categoría es obligatoria.
+          </mat-error>
     </mat-form-field>
-      
 
     <mat-form-field color="accent">
         <mat-label>Valoración</mat-label>
@@ -49,16 +39,6 @@
           La valoración es obligatoria.
         </mat-error>
     </mat-form-field>
-
-    <!-- <mat-form-field appearance="fill">
-        <mat-label>Valoración</mat-label>
-        <mat-icon class="star" (click)="setValue(1)">star</mat-icon>
-        <mat-icon class="star" (click)="setValue(2)">star</mat-icon>
-        <mat-icon class="star" (click)="setValue(3)">star</mat-icon>
-        <mat-icon class="star" (click)="setValue(4)">star</mat-icon>
-        <mat-icon class="star" (click)="setValue(5)">star</mat-icon>
-        <input type="hidden" formControlName="rate">
-    </mat-form-field> -->
   
     <!-- <mat-form-field>
         <mat-label>Imagen</mat-label>

@@ -13,7 +13,7 @@ import { NewCategoryModalComponent } from '../new-category-modal/new-category-mo
 })
 export class AddModalFormComponent implements OnInit {
 
-  formGroup!: FormGroup;
+  formGroup!: FormGroup
 
   ratings = [
     { value: 1, viewValue: '1 estrella' },
@@ -31,7 +31,7 @@ export class AddModalFormComponent implements OnInit {
     { value: 'chino', viewValue: 'Chino' },
     { value: 'mexicano', viewValue: 'Mexicano' },
     { value: 'vegetariano', viewValue: 'Vegetariano' },
-  ];
+  ]
 
   constructor(
     private formBuilder: FormBuilder,
@@ -44,36 +44,31 @@ export class AddModalFormComponent implements OnInit {
       name: ['', Validators.required],
       location: ['', Validators.required],
       categories: [[], Validators.required],
-      // rate: [null, Validators.required],
+      rate: [null],
       // image: [null, Validators.required]
-    });
+    })
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.formGroup.valid) {
       console.log(this.formGroup.value);
-      // Aquí puedes agregar el código para enviar los datos del formulario al servidor.
     } else {
       this.snackBar.open('Faltan campos por completar', 'Cerrar', {
         duration: 3000
-      });
+      })
     }
   }
 
-  addCategory(category: string) {
-    const dialogRef = this.dialog.open(NewCategoryModalComponent);
-
-    dialogRef.afterClosed().subscribe((nuevaCategoria: string) => {
-      if (nuevaCategoria) {
-        this.categories.push({ value: nuevaCategoria, viewValue: nuevaCategoria });
-        this.formGroup.get('categoria')?.setValue(nuevaCategoria);
+  public addCategory() {
+    const dialogRef = this.dialog.open(NewCategoryModalComponent)
+  
+    dialogRef.componentInstance.categoryAdded.subscribe(newCategory => {
+      if (newCategory) {
+        this.categories.push({ value: newCategory, viewValue: newCategory });
+        this.formGroup.get('categories')?.setValue([...this.formGroup.get('categories')?.value, newCategory]);
       }
-    });
+    })
   }
-
-  // setValue(rate: number) {
-  //   this.formGroup.get('rate')?.setValue(rate);
-  // }
 
   // onFileSelected(event): void {
   //   const file = event.target.files[0];
