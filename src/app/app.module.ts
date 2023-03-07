@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
@@ -41,6 +42,7 @@ import { NewCategoryModalComponent } from './components/new-category-modal/new-c
     MatDialogModule,
     MatSnackBarModule,
     MatSelectModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
