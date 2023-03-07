@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-category-modal',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCategoryModalComponent implements OnInit {
 
-  constructor() { }
+  formGroup!: FormGroup
+
+  @Output() categoryAdded = new EventEmitter()
+  public newCategory = ''
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      newCategory: ['']
+    })
+  }
+
+  public save() {
+    this.categoryAdded.emit(this.newCategory)
   }
 
 }
