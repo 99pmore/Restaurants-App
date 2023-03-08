@@ -21,7 +21,7 @@
             <mat-option *ngFor="let category of categories" [value]="category.value">
                 {{ category.viewValue }}
             </mat-option>
-            <mat-option value="otro" (click)="addCategory()">Otro</mat-option>
+            <mat-option value="otro" (click)="addCategory()">Añadir otra</mat-option>
         </mat-select>
         <mat-error *ngIf="formGroup.get('categories')?.invalid">
             La categoría es obligatoria.
@@ -29,6 +29,24 @@
     </mat-form-field>
 
     <mat-form-field color="accent">
+        <mat-label>Precio</mat-label>
+        <mat-select formControlName="price">
+            <mat-option *ngFor="let price of prices" [value]="price.value">
+                {{ price.viewValue }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field color="accent">
+        <mat-label>Valoración</mat-label>
+        <input matInput type="number" [min]="1" [max]="5" id="aux-input">
+        <mat-slider thumbLabel [min]="1" [max]="5" [step]="1" class="slider"></mat-slider>
+        <mat-error *ngIf="formGroup.get('rate')?.invalid">
+            La valoración es obligatoria.
+        </mat-error>
+    </mat-form-field>
+    
+    <!-- <mat-form-field color="accent">
         <mat-label>Valoración</mat-label>
         <mat-select formControlName="rate">
             <mat-option *ngFor="let rate of ratings" [value]="rate.value">
@@ -38,8 +56,8 @@
         <mat-error *ngIf="formGroup.get('rate')?.invalid">
           La valoración es obligatoria.
         </mat-error>
-    </mat-form-field>
-  
+    </mat-form-field> -->
+    
     <!-- <mat-form-field>
         <mat-label>Imagen</mat-label>
         <input

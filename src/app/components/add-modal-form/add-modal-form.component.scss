@@ -9,6 +9,14 @@ form {
 
     mat-form-field {
         width: 100%;
+
+        .slider {
+            width: 100%;
+        }
+
+        #aux-input {
+            visibility: hidden;
+        }
     }
 
     .mat-raised-button:not([class*=mat-elevation-z]) {

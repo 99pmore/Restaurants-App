@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,22 +15,20 @@ export class AddModalFormComponent implements OnInit {
 
   formGroup!: FormGroup
 
-  ratings = [
-    { value: 1, viewValue: '1 estrella' },
-    { value: 2, viewValue: '2 estrellas' },
-    { value: 3, viewValue: '3 estrellas' },
-    { value: 4, viewValue: '4 estrellas' },
-    { value: 5, viewValue: '5 estrellas' }
+  prices = [
+    { value: 1, viewValue: '[ 0 - 10 ] €' },
+    { value: 2, viewValue: '[ 10 - 20 ] €' },
+    { value: 3, viewValue: '[ 20 - 30 ] €' },
+    { value: 4, viewValue: '[ 30 - ] €' },
   ];
 
   categories = [
     { value: 'español', viewValue: 'Español' },
-    { value: 'hamburguesas', viewValue: 'Hamburguesas' },
+    { value: 'americano', viewValue: 'Americano' },
     { value: 'italiano', viewValue: 'Italiano' },
     { value: 'japones', viewValue: 'Japonés' },
     { value: 'chino', viewValue: 'Chino' },
     { value: 'mexicano', viewValue: 'Mexicano' },
-    { value: 'vegetariano', viewValue: 'Vegetariano' },
   ]
 
   constructor(
@@ -44,6 +42,7 @@ export class AddModalFormComponent implements OnInit {
       name: ['', Validators.required],
       location: ['', Validators.required],
       categories: [[], Validators.required],
+      price: [null],
       rate: [null],
       // image: [null, Validators.required]
     })
