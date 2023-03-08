@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "restaurants-app:build:production",
+            "firebaseProject": "la-gastroteca",
+            "firebaseHostingSite": "la-gastroteca"
+          }
         }
       }
     }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "la-gastroteca": {
+      "hosting": {
+        "restaurants-app": [
+          "la-gastroteca"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "la-gastroteca"
+  }
+}

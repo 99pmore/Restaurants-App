@@ -19,6 +19,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddButtonComponent } from './components/add-button/add-button.component';
 import { AddModalFormComponent } from './components/add-modal-form/add-modal-form.component';
 import { NewCategoryModalComponent } from './components/new-category-modal/new-category-modal.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,9 @@ import { NewCategoryModalComponent } from './components/new-category-modal/new-c
     MatSnackBarModule,
     MatSelectModule,
     MatSliderModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
