@@ -23,6 +23,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     AddButtonComponent,
     AddModalFormComponent,
     NewCategoryModalComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
