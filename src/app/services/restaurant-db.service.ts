@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FirestoreService {
+export class RestaurantDBService {
 
   private restaurantCollection!: CollectionReference<DocumentData>
 
