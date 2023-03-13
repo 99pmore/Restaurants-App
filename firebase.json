@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "restaurants-app",
-    "public": "dist/restaurants-app",
+    "public": "dist",
     "ignore": [
       "**/.*"
     ],
