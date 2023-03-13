@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use './theme.scss' as *;
+@import './theme.scss';
 
 @include mat.core();
 @include mat.all-component-themes($restaurants-app-theme);
