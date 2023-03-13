@@ -12,11 +12,11 @@ import { Observable } from 'rxjs';
 export class UserDBService {
 
   private usersCollection!: CollectionReference<DocumentData>
-
+  
   constructor(
     private firestore: Firestore,
-  ) { 
-    this.usersCollection = collection(this.firestore, 'users')
+    ) { 
+      this.usersCollection = collection(this.firestore, 'users')
   }
 
   public create(user: User) {
@@ -24,6 +24,7 @@ export class UserDBService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
+      restaurants: []
     }
     return addDoc(this.usersCollection, userData)
   }

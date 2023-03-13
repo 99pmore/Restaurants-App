@@ -1,3 +1,4 @@
+import { RestaurantDBService } from './../../services/restaurant-db.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
@@ -35,6 +36,7 @@ export class AddModalFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
     private dialog: MatDialog,
+    private restaurantDBService: RestaurantDBService,
   ) {}
 
   ngOnInit(): void {
@@ -50,7 +52,7 @@ export class AddModalFormComponent implements OnInit {
 
   public onSubmit(): void {
     if (this.formGroup.valid) {
-      console.log(this.formGroup.value);
+      console.log(this.formGroup.value)
     } else {
       this.snackBar.open('Faltan campos por completar', 'Cerrar', {
         duration: 3000
@@ -63,8 +65,8 @@ export class AddModalFormComponent implements OnInit {
   
     dialogRef.componentInstance.categoryAdded.subscribe(newCategory => {
       if (newCategory) {
-        this.categories.push({ value: newCategory, viewValue: newCategory });
-        this.formGroup.get('categories')?.setValue([...this.formGroup.get('categories')?.value, newCategory]);
+        this.categories.push({ value: newCategory, viewValue: newCategory })
+        this.formGroup.get('categories')?.setValue([...this.formGroup.get('categories')?.value, newCategory])
       }
     })
   }
