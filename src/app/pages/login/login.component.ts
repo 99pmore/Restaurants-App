@@ -22,4 +22,9 @@ export class LoginComponent implements OnInit {
     .then(() => this.router.navigate(['/home']))
   }
 
+  public loginAnonymously() {
+    this.loginService.loginAnonymously()
+    .then(() => this.router.navigate(['/home']))
+  }
+
 }

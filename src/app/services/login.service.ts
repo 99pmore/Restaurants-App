@@ -1,6 +1,6 @@
+import { UserDBService } from './user-db.service';
 import { Injectable } from '@angular/core';
 import { Auth, GoogleAuthProvider, signInWithRedirect, signInWithPopup, signInAnonymously, signOut, } from '@angular/fire/auth';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +9,25 @@ export class LoginService {
 
   constructor(
     private auth: Auth,
-    private firestore: Firestore
+    private userDBService: UserDBService
   ) { }
 
-  loginWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider())
+  public async loginWithGoogle() {
+    await signInWithPopup(this.auth, new GoogleAuthProvider());
+    return await this.saveUser();
+  }
+  
+  public async loginAnonymously() {
+    await signInAnonymously(this.auth);
+    return await this.saveUser();
   }
 
-  loginAnonymously() {
-    return signInAnonymously(this.auth);
+  private async saveUser() {
+    const user = this.auth.currentUser
+    if (user) {
+      await this.userDBService.create(user)
+    }
   }
-
-  // saveUserData(user: User) {
-  //   const userRef = this.firestore.collection('users').doc(user.uid)
-
-  //   return userRef.set({
-  //     displayName: user.displayName,
-  //     email: user.email,
-  //     photoURL: user.photoURL
-  //   })
-  // }
+  
 
 }
